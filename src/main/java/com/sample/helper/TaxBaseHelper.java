@@ -5,11 +5,14 @@ import com.sample.bean.HeaderBean;
 import com.sample.helper.impl.HeaderTaxHelper;
 
 public abstract class TaxBaseHelper<T extends BaseBean> {
-    private T t;
-
     // Some fields
-    public TaxBaseHelper() { // with some arguments
+    private T t;
+    private Class<T> tClass;
+
+    public TaxBaseHelper(T t) { // with some arguments
         // Initialization
+        this.t = t;
+        tClass = (Class<T>) t.getClass();
     }
 
     protected abstract String getSomething();
@@ -21,14 +24,21 @@ public abstract class TaxBaseHelper<T extends BaseBean> {
         System.out.println("Here we are doing something with [" + something + "]");
     }
 
-    public BaseBean getBaseBean() {
-        // Do some conversions here
-        return t;
+    public final BaseBean getBaseBean() {
+        BaseBean bean = new BaseBean();
+
+        // Do some conversions use this.t here
+
+        return bean;
+    }
+
+    public final Class<T> getTClass() {
+        return tClass;
     }
 
     public static TaxBaseHelper<?> getHelper(BaseBean bean) {
         if (bean instanceof HeaderBean) {
-            return new HeaderTaxHelper();
+            return new HeaderTaxHelper((HeaderBean) bean);
         }
 
         return null;

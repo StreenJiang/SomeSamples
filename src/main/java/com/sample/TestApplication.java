@@ -9,6 +9,7 @@ public class TestApplication {
         //   we just need to know what method we need to use, that's it
         System.out.println("------------------------");
         TaxBaseHelper<?> helper = TaxBaseHelper.getHelper(new HeaderBean());
+        System.out.println("Class: " + helper.getTClass());
         helper.handleSomething();
         System.out.println("------------------------");
 
