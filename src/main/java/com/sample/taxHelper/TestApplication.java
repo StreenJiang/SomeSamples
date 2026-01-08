@@ -1,7 +1,7 @@
-package com.sample;
+package com.sample.taxHelper;
 
-import com.sample.bean.HeaderBean;
-import com.sample.helper.TaxBaseHelper;
+import com.sample.taxHelper.bean.HeaderBean;
+import com.sample.taxHelper.helper.TaxBaseHelper;
 
 public class TestApplication {
     static void main() {

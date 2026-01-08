@@ -1,4 +1,4 @@
-package com.sample.bean;
+package com.sample.taxHelper.bean;
 
 public class HeaderBean extends BaseBean {
 

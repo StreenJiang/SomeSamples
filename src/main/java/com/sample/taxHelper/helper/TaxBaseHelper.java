@@ -1,8 +1,8 @@
-package com.sample.helper;
+package com.sample.taxHelper.helper;
 
-import com.sample.bean.BaseBean;
-import com.sample.bean.HeaderBean;
-import com.sample.helper.impl.HeaderTaxHelper;
+import com.sample.taxHelper.bean.BaseBean;
+import com.sample.taxHelper.bean.HeaderBean;
+import com.sample.taxHelper.helper.impl.HeaderTaxHelper;
 
 public abstract class TaxBaseHelper<T extends BaseBean> {
     // Some fields
@@ -11,7 +11,7 @@ public abstract class TaxBaseHelper<T extends BaseBean> {
 
     public TaxBaseHelper(T t) { // with some arguments
         // Initialization
-        this.t = t;
+       this.t = t;
         tClass = (Class<T>) t.getClass();
     }
 

@@ -1,7 +1,7 @@
-package com.sample.helper.impl;
+package com.sample.taxHelper.helper.impl;
 
-import com.sample.bean.HeaderBean;
-import com.sample.helper.TaxBaseHelper;
+import com.sample.taxHelper.bean.HeaderBean;
+import com.sample.taxHelper.helper.TaxBaseHelper;
 
 public class HeaderTaxHelper extends TaxBaseHelper<HeaderBean> {
     public HeaderTaxHelper(HeaderBean headerBean) {
@@ -10,6 +10,6 @@ public class HeaderTaxHelper extends TaxBaseHelper<HeaderBean> {
 
     @Override
     protected String getSomething() {
-        return HeaderTaxHelper.class.getName() + "-" + HeaderBean.class.getName();
+        return this.getClass().getName() + " | " + getTClass().getName();
     }
 }
