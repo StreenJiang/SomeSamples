@@ -1,4 +1,4 @@
 package com.sample.taxHelper.bean;
 
-public class BaseBean {
+public class TaxBaseBean {
 }

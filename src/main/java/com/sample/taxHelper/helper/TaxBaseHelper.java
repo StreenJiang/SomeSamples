@@ -1,10 +1,10 @@
 package com.sample.taxHelper.helper;
 
-import com.sample.taxHelper.bean.BaseBean;
-import com.sample.taxHelper.bean.HeaderBean;
+import com.sample.taxHelper.bean.TaxBaseBean;
+import com.sample.taxHelper.bean.HeaderTaxBean;
 import com.sample.taxHelper.helper.impl.HeaderTaxHelper;
 
-public abstract class TaxBaseHelper<T extends BaseBean> {
+public abstract class TaxBaseHelper<T extends TaxBaseBean> {
     // Some fields
     private T t;
     private Class<T> tClass;
@@ -24,8 +24,8 @@ public abstract class TaxBaseHelper<T extends BaseBean> {
         System.out.println("Here we are doing something with [" + something + "]");
     }
 
-    public final BaseBean getBaseBean() {
-        BaseBean bean = new BaseBean();
+    public final TaxBaseBean getBaseBean() {
+        TaxBaseBean bean = new TaxBaseBean();
 
         // Do some conversions use this.t here
 
@@ -36,9 +36,9 @@ public abstract class TaxBaseHelper<T extends BaseBean> {
         return tClass;
     }
 
-    public static TaxBaseHelper<?> getHelper(BaseBean bean) {
-        if (bean instanceof HeaderBean) {
-            return new HeaderTaxHelper((HeaderBean) bean);
+    public static TaxBaseHelper<?> getHelper(TaxBaseBean bean) {
+        if (bean instanceof HeaderTaxBean) {
+            return new HeaderTaxHelper((HeaderTaxBean) bean);
         }
 
         return null;
