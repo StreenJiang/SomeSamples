@@ -1,9 +1,11 @@
 package com.sample.paging.dto;
 
-import com.sample.paging.entity.BaseEntity;
+import com.sample.paging.entity.base.BaseEntity;
+import lombok.Data;
 
 import java.util.List;
 
+@Data
 public class PageDTO<T extends BaseEntity> {
     private List<T> data;
     private int pageNumber;
